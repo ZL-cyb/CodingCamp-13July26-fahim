@@ -1,0 +1,1117 @@
+/* ======================================================
+   LIFE DASHBOARD
+   STYLE.CSS
+====================================================== */
+
+/* ================= GOOGLE FONT ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --primary:#6366f1;
+    --primary-dark:#4f46e5;
+
+    --success:#22c55e;
+    --danger:#ef4444;
+    --warning:#f59e0b;
+
+    --bg:#f4f7fb;
+    --card:#ffffff;
+
+    --text:#222;
+    --text-light:#666;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --transition:.30s ease;
+
+}
+
+body.dark{
+
+    --bg:#0f172a;
+
+    --card:#1e293b;
+
+    --text:#ffffff;
+
+    --text-light:#cbd5e1;
+
+    --shadow:0 10px 25px rgba(0,0,0,.45);
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc
+    );
+
+    background-attachment:fixed;
+
+    color:var(--text);
+
+    transition:var(--transition);
+
+    min-height:100vh;
+
+}
+
+body.dark{
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #111827
+    );
+
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 8%;
+
+    position:sticky;
+
+    top:0;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+    z-index:999;
+
+}
+
+body.dark .header{
+
+    background:rgba(15,23,42,.75);
+
+}
+
+.logo h1{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.logo p{
+
+    color:var(--text-light);
+
+    margin-top:5px;
+
+}
+
+#themeToggle{
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:1.3rem;
+
+    background:var(--primary);
+
+    color:white;
+
+    transition:var(--transition);
+
+}
+
+#themeToggle:hover{
+
+    transform:rotate(180deg) scale(1.1);
+
+}
+
+/* ================= MAIN ================= */
+
+.dashboard{
+
+    width:min(1300px,92%);
+
+    margin:35px auto;
+
+}
+
+/* ================= HERO ================= */
+
+.hero-card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:var(--shadow);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    margin-bottom:30px;
+
+    transition:var(--transition);
+
+}
+
+body.dark .hero-card{
+
+    background:rgba(30,41,59,.80);
+
+}
+
+.hero-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+#greeting{
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+}
+
+#displayName{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+}
+
+#currentDate{
+
+    color:var(--text-light);
+
+}
+
+#currentTime{
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+}
+
+/* ================= GRID ================= */
+
+.grid-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+
+    gap:25px;
+
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+
+.card{
+
+    background:rgba(255,255,255,.80);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:28px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+body.dark .card{
+
+    background:rgba(30,41,59,.85);
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.card-header h2{
+
+    font-size:1.4rem;
+
+    font-weight:600;
+
+}
+
+.card-header span{
+
+    font-size:.9rem;
+
+    color:var(--text-light);
+
+}
+
+
+/* ======================================================
+   POMODORO TIMER
+====================================================== */
+
+.timer-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin-top:15px;
+
+}
+
+#timerDisplay{
+
+    font-size:4.5rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    letter-spacing:3px;
+
+}
+
+.timer-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+    width:100%;
+
+}
+
+.timer-buttons button{
+
+    flex:1;
+
+    min-width:90px;
+
+    padding:13px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+#startBtn{
+
+    background:var(--success);
+
+    color:white;
+
+}
+
+#pauseBtn{
+
+    background:var(--warning);
+
+    color:white;
+
+}
+
+#resetBtn{
+
+    background:var(--danger);
+
+    color:white;
+
+}
+
+.timer-buttons button:hover{
+
+    transform:translateY(-4px);
+
+    filter:brightness(1.05);
+
+}
+
+
+/* ======================================================
+   TASK INPUT
+====================================================== */
+
+.task-input{
+
+    display:flex;
+
+    gap:12px;
+
+}
+
+.task-input input{
+
+    flex:1;
+
+}
+
+input{
+
+    padding:14px 16px;
+
+    border:2px solid transparent;
+
+    border-radius:14px;
+
+    outline:none;
+
+    background:#f8fafc;
+
+    color:var(--text);
+
+    transition:var(--transition);
+
+}
+
+body.dark input{
+
+    background:#334155;
+
+}
+
+input:focus{
+
+    border-color:var(--primary);
+
+}
+
+.task-input button{
+
+    padding:14px 20px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.task-input button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+/* ======================================================
+   PROGRESS BAR
+====================================================== */
+
+.progress-area{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+}
+
+.progress-bar{
+
+    width:100%;
+
+    height:12px;
+
+    background:#dbe4f0;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+body.dark .progress-bar{
+
+    background:#334155;
+
+}
+
+#progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #4f46e5,
+        #7c3aed
+    );
+
+    border-radius:20px;
+
+    transition:.5s ease;
+
+}
+
+
+/* ======================================================
+   TODO LIST
+====================================================== */
+
+#taskList{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+#taskList li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    transition:var(--transition);
+
+    animation:fadeIn .3s ease;
+
+}
+
+body.dark #taskList li{
+
+    background:#334155;
+
+}
+
+#taskList li:hover{
+
+    transform:translateX(5px);
+
+}
+
+.task-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex:1;
+
+}
+
+.task-info span{
+
+    word-break:break-word;
+
+}
+
+.completed{
+
+    text-decoration:line-through;
+
+    opacity:.6;
+
+}
+
+.task-actions{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.task-actions button{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    transition:var(--transition);
+
+}
+
+.task-actions button:hover{
+
+    transform:scale(1.08);
+
+}
+
+.complete-btn{
+
+    background:var(--success);
+
+    color:white;
+
+}
+
+.edit-btn{
+
+    background:var(--warning);
+
+    color:white;
+
+}
+
+.delete-btn{
+
+    background:var(--danger);
+
+    color:white;
+
+}
+
+
+/* ======================================================
+   EMPTY STATE
+====================================================== */
+
+.empty-state{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    padding:30px 10px;
+
+}
+
+.empty-state p{
+
+    font-size:3rem;
+
+}
+
+.empty-state h3{
+
+    font-weight:600;
+
+}
+
+/* ======================================================
+   QUICK LINKS
+====================================================== */
+
+.link-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.link-form input{
+
+    width:100%;
+
+}
+
+.link-form button{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.link-form button:hover{
+
+    background:var(--primary-dark);
+
+}
+
+#linksContainer{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.link-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px;
+
+    border-radius:16px;
+
+    background:#f8fafc;
+
+    transition:var(--transition);
+
+}
+
+body.dark .link-card{
+
+    background:#334155;
+
+}
+
+.link-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.link-card a{
+
+    flex:1;
+
+    text-decoration:none;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    text-overflow:ellipsis;
+
+}
+
+.link-card button{
+
+    width:34px;
+
+    height:34px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:var(--danger);
+
+    color:white;
+
+    transition:var(--transition);
+
+}
+
+.link-card button:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ======================================================
+   SETTINGS
+====================================================== */
+
+.settings{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.settings label{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    font-weight:500;
+
+}
+
+#saveNameBtn{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+#saveNameBtn:hover{
+
+    background:var(--primary-dark);
+
+}
+
+
+/* ======================================================
+   TOAST
+====================================================== */
+
+.toast{
+
+    position:fixed;
+
+    top:30px;
+
+    right:30px;
+
+    background:var(--success);
+
+    color:white;
+
+    padding:15px 22px;
+
+    border-radius:14px;
+
+    box-shadow:var(--shadow);
+
+    transform:translateX(200%);
+
+    opacity:0;
+
+    transition:.4s ease;
+
+    z-index:9999;
+
+}
+
+.toast.show{
+
+    transform:translateX(0);
+
+    opacity:1;
+
+}
+
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+
+/* ======================================================
+   ANIMATION
+====================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width:900px){
+
+    .header{
+
+        padding:20px;
+
+    }
+
+    .hero-card{
+
+        padding:30px;
+
+    }
+
+    #displayName{
+
+        font-size:2.3rem;
+
+    }
+
+    #currentTime{
+
+        font-size:2rem;
+
+    }
+
+    .grid-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        text-align:center;
+
+    }
+
+    .card{
+
+        padding:22px;
+
+    }
+
+    .task-input{
+
+        flex-direction:column;
+
+    }
+
+    .timer-buttons{
+
+        flex-direction:column;
+
+    }
+
+    #timerDisplay{
+
+        font-size:3.3rem;
+
+    }
+
+    .card-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    #linksContainer{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .toast{
+
+        left:20px;
+
+        right:20px;
+
+        width:auto;
+
+    }
+
+}

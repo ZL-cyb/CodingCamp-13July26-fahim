@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <h1>Life Dashboard</h1>
+            <p>Organize Your Daily Productivity</p>
+
+        </div>
+
+        <div class="header-actions">
+
+            <button id="themeToggle" title="Toggle Theme">
+                🌙
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="dashboard">
+
+        <!-- Greeting -->
+
+        <section class="hero-card">
+
+            <div class="hero-text">
+
+                <h2 id="greeting">
+                    Good Evening 👋
+                </h2>
+
+                <h1 id="displayName">
+                    Guest
+                </h1>
+
+                <p id="currentDate">
+                    Thursday, 16 July 2026
+                </p>
+
+                <h3 id="currentTime">
+                    20:30:45
+                </h3>
+
+            </div>
+
+        </section>
+
+        <!-- Dashboard Grid -->
+
+        <section class="grid-container">
+
+            <!-- ================= TIMER ================= -->
+
+            <article class="card">
+
+                <div class="card-header">
+
+                    <h2>🍅 Focus Timer</h2>
+
+                </div>
+
+                <div class="timer-container">
+
+                    <h1 id="timerDisplay">
+                        25:00
+                    </h1>
+
+                    <div class="timer-buttons">
+
+                        <button id="startBtn">
+                            ▶ Start
+                        </button>
+
+                        <button id="pauseBtn">
+                            ⏸ Pause
+                        </button>
+
+                        <button id="resetBtn">
+                            🔄 Reset
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- ================= TASK ================= -->
+
+            <article class="card">
+
+                <div class="card-header">
+
+                    <h2>📋 My Tasks</h2>
+
+                    <span id="taskCounter">
+                        0 / 0 Completed
+                    </span>
+
+                </div>
+
+                <div class="progress-area">
+
+                    <div class="progress-bar">
+
+                        <div id="progressFill"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="task-input">
+
+                    <input
+                        id="taskInput"
+                        type="text"
+                        placeholder="Add a new task...">
+
+                    <button id="addTaskBtn">
+                        Add
+                    </button>
+
+                </div>
+
+                <ul id="taskList">
+
+                    <!-- JavaScript -->
+
+                </ul>
+
+                <div id="emptyTask" class="empty-state">
+
+                    <p>📭</p>
+
+                    <h3>No Tasks Yet</h3>
+
+                    <span>Start by adding your first task.</span>
+
+                </div>
+
+            </article>
+
+            <!-- ================= QUICK LINKS ================= -->
+
+            <article class="card">
+
+                <div class="card-header">
+
+                    <h2>🔗 Quick Links</h2>
+
+                </div>
+
+                <div class="link-form">
+
+                    <input
+                        id="linkName"
+                        type="text"
+                        placeholder="Website Name">
+
+                    <input
+                        id="linkURL"
+                        type="url"
+                        placeholder="https://example.com">
+
+                    <button id="addLinkBtn">
+                        Add Link
+                    </button>
+
+                </div>
+
+                <div id="linksContainer">
+
+                    <!-- JavaScript -->
+
+                </div>
+
+            </article>
+
+            <!-- ================= SETTINGS ================= -->
+
+            <article class="card">
+
+                <div class="card-header">
+
+                    <h2>⚙ Settings</h2>
+
+                </div>
+
+                <div class="settings">
+
+                    <label>
+
+                        Your Name
+
+                        <input
+                            id="nameInput"
+                            type="text"
+                            placeholder="Enter your name">
+
+                    </label>
+
+                    <button id="saveNameBtn">
+
+                        Save Name
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- ================= TOAST ================= -->
+
+    <div id="toast" class="toast">
+
+        Success
+
+    </div>
+
+    <!-- ================= SCRIPT ================= -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
